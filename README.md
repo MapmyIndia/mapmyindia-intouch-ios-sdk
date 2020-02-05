@@ -23,7 +23,7 @@ We use your Publishable key to identify your account details and assign all your
 
 https://www.mapmyindia.com/api/login?appmyindia-dashboard to get your publishable Key.
 
-After getting the `publishable key`, you can [start with the IntouchDemo app](https://github.com/MapmyIndia), or [Integrate the Intouch SDK]([https://github.com/MapmyIndia](https://github.com/MapmyIndia)) in your app.
+After getting the `publishable key`, you can [start with the IntouchDemo app](https://github.com/MapmyIndia), or [Integrate the Intouch SDK](https://github.com/MapmyIndia/mapmyindia-intouch-ios-sdk)  in your app.
 
 
 ## Setup a Project
