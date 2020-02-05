@@ -53,8 +53,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UNUserNotificat
      
     func getCreateDeviceToken()
     {
-       // Y2M5ZTI4MjEtNDQyZi00NDUxLWE0MWYtZDdhNDg2ZDE4ZDA3 Deepak JWT KEY
-       // const val PUBLISHABLE_KEY = "OTRjYmY5ZDAtM2VjMS00ZTg2LTlmYTAtODVjMGMwMmI2OTRh"//Honda
           SVProgressHUD.show()
          let publisherkey = self.txtTokenKey.text ?? ""
         _ = CreateDeviceManager().fetchAuthToken(clientID: publisherkey, clientSecret: publisherkey) { (token) in

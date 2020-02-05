@@ -28,7 +28,6 @@ class StartBeaconVC: UIViewController,CLLocationManagerDelegate,UNUserNotificati
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         bgviewTrackMode.layer.cornerRadius = 6.0
         bgviewTrackMode.layer.borderWidth = 1.0
         bgviewTrackMode.layer.borderColor = UIColor(red: 227/255.0, green: 227/255.0, blue: 227/255.0, alpha: 1.0).cgColor
@@ -54,6 +53,7 @@ class StartBeaconVC: UIViewController,CLLocationManagerDelegate,UNUserNotificati
         self.navigationItem.title = ""
         // Do any additional setup after loading the view.
     }
+   
     @objc func beaconStartTimer() {
         // Something after a delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -109,6 +109,7 @@ class StartBeaconVC: UIViewController,CLLocationManagerDelegate,UNUserNotificati
         
          self.navigationController?.pushViewController(vctrl!, animated: true)
     }
+    
     @IBAction func stopTrack(_ sender: Any) {
         
                timer.invalidate()
@@ -119,9 +120,7 @@ class StartBeaconVC: UIViewController,CLLocationManagerDelegate,UNUserNotificati
                btnTrackMode.alpha = 1.0
                OpenLocate.shared.stopSensors()
                OpenLocate.shared.stopTracking()
-                onStopTracking()
-                
-                
+               onStopTracking()
      }
     
     @IBAction func startTrack(_ sender: Any) {

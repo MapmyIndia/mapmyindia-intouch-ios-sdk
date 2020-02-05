@@ -34,9 +34,9 @@
 	<key>NSMotionUsageDescription</key>
 	<string>In order to count steps I need an access to your pedometer</string>
 	<key>ProviderId</key>
-	<string>29BA136E-A726-4D6D-9B81-A0C869F9DDBF</string>
+	<string>23232424</string>
 	<key>Token</key>
-	<string>d38398563c175477d43a395e 8f87b2f600c0b381dde08d176ff687772570820f</string>
+	<string>342432434</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>external-accessory</string>
