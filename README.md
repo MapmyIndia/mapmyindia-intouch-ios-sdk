@@ -222,5 +222,14 @@ OpenLocate.shared.stopSensors() OpenLocate.shared.stopTracking()
 onStopTracking()
 option Redirect To Intouch
 ```
+Set Vehicle type and Priority configration from below code
+
+```
+SetConfigration().setAdditionalConfigVehicleType(vehicleType: "")
+SetConfigration().setAdditionalConfigPriority(Priority: "")
+```
+
+
+
 README.md
 Displaying README.md.
