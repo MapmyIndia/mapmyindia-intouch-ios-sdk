@@ -28,8 +28,6 @@ https://www.mapmyindia.com/api/login?appmyindia-dashboard)to get your publishabl
 
 After getting the publishable key, you can [start with the IntouchDemo app](https://github.com/MapmyIndia), or [Integrate the Intouch SDK]([https://github.com/MapmyIndia](https://github.com/MapmyIndia)) in your app.
 
-<![endif]-->
-
 Setup a Project
 
 This guide allows you to add a live location tracking to an iOS app.
@@ -64,6 +62,7 @@ requestWhenInUseAuthorization
 
 Step 3. Check your location on the Intouch [dashboard](https://intouch.mapmyindia.com/nextgen)
 
+To Start a new Project
 Step 1: Setup a project
 1.  Open Xcode Project.
 2.  Create a new project as follows:
@@ -152,7 +151,7 @@ return
 }
 }
 ```
-#### Call the below method to track your app user's phone live location. Make sure your internet connection  will be on that time.
+#### Call the below method to track your app user's phone live location. Make sure your internet connection will be on that time.
 
 ```
 SetConfigration().configureOpenLocate()
@@ -170,3 +169,8 @@ OpenLocate.shared.stopSensors() OpenLocate.shared.stopTracking()
 onStopTracking()
 option Redirect To Intouch
 ```
+
+Also Set configration what you select
+'''
+ SetConfigration().setAdditionalConfigVehicleType(vehicleType: "")
+'''

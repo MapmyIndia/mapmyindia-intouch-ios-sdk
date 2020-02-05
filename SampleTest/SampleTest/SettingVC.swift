@@ -9,8 +9,6 @@
 import UIKit
 import BeaconSdkFramework
 class SettingVC: UIViewController {
-
-    private let intervals = [60.0, 300.0, 3600.0, 21600.0, 43200.0, 86400.0]
  
     private let GenderArr = ["Male", "Female"]
     private let Priority = ["Fast", "Slow", "Optimal"]
