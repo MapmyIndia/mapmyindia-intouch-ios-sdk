@@ -25,17 +25,16 @@ struct getSettingData {
 class ViewController: UIViewController,CLLocationManagerDelegate,UNUserNotificationCenterDelegate {
    
     @IBOutlet weak var deviceNameTxt: UITextField!
-   
     @IBOutlet weak var btnInitilizeToken: UIButton!
-    
     @IBOutlet weak var txtTokenKey: UITextField!
 
     @IBAction func btnGetToken(_ sender: Any) {
     
         let deviceName = deviceNameTxt.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        if deviceName == ""
+        let publisherkey = txtTokenKey.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if deviceName == "" && publisherkey == ""
         {
-             let alert = UIAlertController(title: "Alert", message: "Device Name can't be blank", preferredStyle: UIAlertControllerStyle.alert)
+             let alert = UIAlertController(title: "Alert", message: "DeviceName&Publisherkey can't be blank", preferredStyle: UIAlertControllerStyle.alert)
              alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
              self.present(alert, animated: true, completion: nil)
               return
@@ -56,8 +55,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UNUserNotificat
     {
        // Y2M5ZTI4MjEtNDQyZi00NDUxLWE0MWYtZDdhNDg2ZDE4ZDA3 Deepak JWT KEY
        // const val PUBLISHABLE_KEY = "OTRjYmY5ZDAtM2VjMS00ZTg2LTlmYTAtODVjMGMwMmI2OTRh"//Honda
-        SVProgressHUD.show()
-        _ = CreateDeviceManager().fetchAuthToken(clientID: "Y2M5ZTI4MjEtNDQyZi00NDUxLWE0MWYtZDdhNDg2ZDE4ZDA3", clientSecret: "Y2M5ZTI4MjEtNDQyZi00NDUxLWE0MWYtZDdhNDg2ZDE4ZDA3") { (token) in
+          SVProgressHUD.show()
+         let publisherkey = self.txtTokenKey.text ?? ""
+        _ = CreateDeviceManager().fetchAuthToken(clientID: publisherkey, clientSecret: publisherkey) { (token) in
                   print("%@",token)
                   SVProgressHUD.dismiss()
                   if token != ""
