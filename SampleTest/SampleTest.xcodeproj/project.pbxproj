@@ -19,9 +19,9 @@
 		B125832D23A203B3006E70DF /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B125832C23A203B3006E70DF /* SettingVC.swift */; };
 		B125833023A259CA006E70DF /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B125832E23A259CA006E70DF /* SettingCell.swift */; };
 		B125833123A259CA006E70DF /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B125832F23A259CA006E70DF /* SettingCell.xib */; };
-		B13757CD23B5DDF400BE2D9C /* BeaconSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13757CB23B5DDE700BE2D9C /* BeaconSdkFramework.framework */; };
-		B13757CE23B5DDF400BE2D9C /* BeaconSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B13757CB23B5DDE700BE2D9C /* BeaconSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B13757D123B61B8100BE2D9C /* SignalStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13757D023B61B8100BE2D9C /* SignalStrength.swift */; };
+		B1A9A6172458393F00C6DD4E /* BeaconSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A9A6152458393400C6DD4E /* BeaconSdkFramework.framework */; };
+		B1A9A6182458393F00C6DD4E /* BeaconSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A9A6152458393400C6DD4E /* BeaconSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1CDAD8923E5730200753A63 /* StartBeaconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDAD8823E5730200753A63 /* StartBeaconVC.swift */; };
 		D145A2E2B2EB9312C0559AE8 /* Pods_SampleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DD79BB2D1A25D8E2C62D98 /* Pods_SampleTest.framework */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B13757CE23B5DDF400BE2D9C /* BeaconSdkFramework.framework in Embed Frameworks */,
+				B1A9A6182458393F00C6DD4E /* BeaconSdkFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,10 +56,10 @@
 		B125832C23A203B3006E70DF /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		B125832E23A259CA006E70DF /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		B125832F23A259CA006E70DF /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
-		B13757CB23B5DDE700BE2D9C /* BeaconSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BeaconSdkFramework.framework; sourceTree = "<group>"; };
 		B13757CF23B5F94600BE2D9C /* SampleTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleTest.entitlements; sourceTree = "<group>"; };
 		B13757D023B61B8100BE2D9C /* SignalStrength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalStrength.swift; sourceTree = "<group>"; };
 		B17DB12523CF393400B20EE1 /* strip-frameworks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "strip-frameworks.sh"; sourceTree = "<group>"; };
+		B1A9A6152458393400C6DD4E /* BeaconSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BeaconSdkFramework.framework; sourceTree = "<group>"; };
 		B1CDAD8823E5730200753A63 /* StartBeaconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartBeaconVC.swift; sourceTree = "<group>"; };
 		D7C012FB27C140842B81B04B /* Pods-SampleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTest.release.xcconfig"; path = "Target Support Files/Pods-SampleTest/Pods-SampleTest.release.xcconfig"; sourceTree = "<group>"; };
 		E5DD79BB2D1A25D8E2C62D98 /* Pods_SampleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B13757CD23B5DDF400BE2D9C /* BeaconSdkFramework.framework in Frameworks */,
+				B1A9A6172458393F00C6DD4E /* BeaconSdkFramework.framework in Frameworks */,
 				6818C9DB231E809F0060131A /* libsqlite3.0.tbd in Frameworks */,
 				6818C9D9231E80960060131A /* libz.tbd in Frameworks */,
 				D145A2E2B2EB9312C0559AE8 /* Pods_SampleTest.framework in Frameworks */,
@@ -84,8 +84,8 @@
 		6818C983231E7B490060131A = {
 			isa = PBXGroup;
 			children = (
+				B1A9A6152458393400C6DD4E /* BeaconSdkFramework.framework */,
 				B17DB12523CF393400B20EE1 /* strip-frameworks.sh */,
-				B13757CB23B5DDE700BE2D9C /* BeaconSdkFramework.framework */,
 				6818C98E231E7B490060131A /* SampleTest */,
 				6818C98D231E7B490060131A /* Products */,
 				6818C9D7231E80960060131A /* Frameworks */,

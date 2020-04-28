@@ -30,6 +30,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UNUserNotificat
 
     @IBAction func btnGetToken(_ sender: Any) {
     
+      //  self.intouchDecicetoke()
         let deviceName = deviceNameTxt.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let publisherkey = txtTokenKey.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if deviceName == "" && publisherkey == ""
@@ -49,9 +50,31 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UNUserNotificat
          {
             self.txtTokenKey.text = trackCode
          }
-       }
-     
+       //}*/
+    }
     func getCreateDeviceToken()
+    {
+         SVProgressHUD.show()
+         let publisherkey = self.txtTokenKey.text ?? ""
+         let deviceNameNew = self.deviceNameTxt.text ?? ""
+        CreateDeviceManager().IntouchCreateDevice(token: publisherkey, clientSecret: publisherkey, currentDeviceName: deviceNameNew) { (trackingCode) in
+                  print(trackingCode)
+               SVProgressHUD.dismiss()
+                          if trackingCode != ""
+                                               {
+                                                  let code = trackingCode
+                                                  DispatchQueue.main.async {
+                                                       self.txtTokenKey.text = code
+                                                       UserDefaults.standard.set(self.deviceNameTxt.text ?? "", forKey: "DeviceName") //setObject
+                                                       self.enableConfigration()
+                                                  }
+                                               
+                                                }
+        }
+    }
+    
+    
+  /*  func getCreateDeviceToken()
     {
           SVProgressHUD.show()
          let publisherkey = self.txtTokenKey.text ?? ""
@@ -60,7 +83,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UNUserNotificat
                   SVProgressHUD.dismiss()
                   if token != ""
                   {
-                      self.CreateBeaconDevice(getToken: token)
+                     // self.CreateBeaconDevice(getToken: token)
                   }
               }
     }
@@ -107,7 +130,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UNUserNotificat
                                      }
                               }
                }
-       }
+       }*/
 
     func enableConfigration()
     {
