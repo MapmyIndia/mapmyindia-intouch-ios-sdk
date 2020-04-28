@@ -105,58 +105,13 @@ OpenLocate.shared.performFetchWithCompletionHandler(completionHandler)
 
 Initialize the SDK with your [Publishable Key](Test)
 
-#### Add your Publisher key in client Id and Client Secret.
+#### Add your Publisher key in client Id and Client Secret and add deviceName.
 ```
-_ = CreateDeviceManager().fetchAuthToken(clientID: "", clientSecret: "") { (token) in
-print("%@",token)
-if token != ""
-{
-Print(Success)
-}else{
-Print(failed)
-}
-}
-    // Adding tracking code:-
- func CreateBeaconDevice(getToken: String)
-    {
-        var deviceCode =  KeychainWrapper.standard.string(forKey: "deviceCode")
-        if deviceCode == nil || deviceCode == ""
-        {
-            let udid = UIDevice.current.identifierForVendor?.uuidString
-                                                            print(udid ?? "")
-            KeychainWrapper.standard.set(udid ?? "", forKey: "deviceCode")
-            deviceCode =  KeychainWrapper.standard.string(forKey: "deviceCode")
-            }
-            let devicename1 =  UIDevice.current.name
-            let deviceModel =  UIDevice.current
-            let deviceModelNew = deviceModel.modelName
-           
-            let result = deviceModelNew.removeWhitespace()
-          
-            var currentVersion: String = ""
-            let infoDictionary = Bundle.main.infoDictionary
-            currentVersion = infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
-           
-            var deviceNameNew = ""
-
-          DispatchQueue.main.async {
-             deviceNameNew = "YOUR DEVICE NAME"
-            _ =  CreateDeviceManager().createDevice(token: "", Url: "", deviceCode: deviceCode ?? "", deviceType: "35", deviceTypeName: devicename1, deviceName:deviceNameNew, deviceBrand: "Apple", deviceModel: result, osVersion: currentVersion, sdkVersion: "1.0", expiry: "9999") { (TrakingCode) in                 
-                                   if TrakingCode != ""
-                                    {
-                                       let code = TrakingCode
-                                       DispatchQueue.main.async {
-                                            self.txtTokenKey.text = code
-                                            UserDefaults.standard.set(self.deviceNameTxt.text ?? "", forKey: "DeviceName") //setObject
-                             }
-                                    
-                        }
-                   }
-               }
+CreateDeviceManager().IntouchCreateDevice(clientID: publisherkey, clientSecret: publisherkey, currentDeviceName: deviceNameNew) { (trackingCode) in
+                 print(trackingCode)
        }
 
 ```
-
 `Client ID` and `Client Secret` it will contain the  `Publisher Key`.
 After Successful get the token we  hit the api  for create device. after this you get the traking code
 // set your device name for tracking this device name will be show on Intouch panel.
