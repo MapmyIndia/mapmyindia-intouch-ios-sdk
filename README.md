@@ -9,7 +9,7 @@ Using this SDK, Your app shall fetch the live location from the end user mobile 
 
 You will get seemless location benifits which caterted to different domains like `logistics`, `delivery tracking` , `Employee tracking` , `live location sharing`  etc.
 
--  [Publishable Key](https://apisupport@mapmyindia.com) Get your Publishable Key please contact from apiSupport url .
+-  [Publishable Key](https://apisupport@mapmyindia.com) Get your Publishable Key please contact from apiSupport url (https://apisupport@mapmyindia.com)
 
 -  [Quickstart](https://github.com/MapmyIndia) Start with a ready-to-go app
 
