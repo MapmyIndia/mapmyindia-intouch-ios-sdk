@@ -107,9 +107,7 @@ Initialize the SDK with your [Publishable Key](Test)
 
 #### Add your Publisher key in client Id and Client Secret and add deviceName.
 ```
-CreateDeviceManager().IntouchCreateDevice(clientID: publisherkey, clientSecret: publisherkey, currentDeviceName: deviceNameNew) { (trackingCode) in
-                 print(trackingCode)
-       }
+Intouch.shared.intouchInitilization(clientID: "", ClientSecret: "", successResponse: { (Success) in print(Success) }) { (error) in print(error?.localizedDescription) } }
 
 ```
 `Client ID` and `Client Secret` it will contain the  `Publisher Key`.
@@ -135,7 +133,7 @@ Set delegate  UNUserNotificationCenterDelegate  private  let  locationManager = 
 
 override  func  viewDidLoad() {
 super.viewDidLoad()
-if  OpenLocate.shared.isTrackingEnabled {
+if  Intouch().shared.isTrackingEnabled {
 onStartTracking()
 }
 
@@ -162,26 +160,21 @@ return
 #### Call the below method to track your app user's phone live location. Make sure your internet connection  will be on that time.
 
 ```
-SetConfigration().configureOpenLocate()
-OpenLocate.shared.startTracking()
-onStartTracking()
-OpenLocate.shared.getGyroMeterData()
-OpenLocate.shared.getAccelerometerData()
-OpenLocate.shared.getBaroMeterData()
+Intouch().StartTracking()
 ```
 ####  Call the below method to Stop Track your app user's phone live location.
 We put these lines for stop beacon tracking  and  sensors  like gyro, aceelerometer., barometer , motion detectors.
 
 ```
-OpenLocate.shared.stopSensors() OpenLocate.shared.stopTracking()
-onStopTracking()
+Intouch.shared.stopTracking()
 option Redirect To Intouch
 ```
 Set Vehicle type and Priority configration from below code
 
 ```
-SetConfigration().setAdditionalConfigVehicleType(vehicleType: "")
-SetConfigration().setAdditionalConfigPriority(Priority: "")
+ Intouch().IntouchUserGender(gender: "")
+ Intouch().IntouchVehicleType(vehicleType: "")
+ Intouch().pollingConfigrationMode(priority: "")
 ```
 
 
