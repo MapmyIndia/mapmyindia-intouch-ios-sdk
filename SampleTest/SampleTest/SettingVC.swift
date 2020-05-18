@@ -38,6 +38,8 @@ class SettingVC: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    
+    
 }
 
 //MARK: TABLE_DELEGATE&DATASOURCE
@@ -73,13 +75,13 @@ extension SettingVC: UITableViewDelegate,UITableViewDataSource
         {
             let VehicleType = PrioritySettingArr[indexPath.row]
              getSettingData.VehicleType = VehicleType
-            SetConfigration().setAdditionalConfigVehicleType(vehicleType: VehicleType)
+            Intouch().IntouchVehicleType(vehicleType: VehicleType)
             self.navigationController?.popViewController(animated: true)
         }
         else if settingType == "Gender"
         {
                let gender = PrioritySettingArr[indexPath.row]
-               SetConfigration().setAdditionalConfigGender(gender: gender)
+               Intouch().IntouchUserGender(gender: gender)
                 getSettingData.gender = gender
                self.navigationController?.popViewController(animated: true)
         }
@@ -87,7 +89,7 @@ extension SettingVC: UITableViewDelegate,UITableViewDataSource
         {
               let setPriority = PrioritySettingArr[indexPath.row]
                  getSettingData.periority = setPriority
-             SetConfigration().setAdditionalConfigPriority(Priority: setPriority)
+            Intouch().pollingConfigrationMode(priority: setPriority)
              self.navigationController?.popViewController(animated: true)
             
         }

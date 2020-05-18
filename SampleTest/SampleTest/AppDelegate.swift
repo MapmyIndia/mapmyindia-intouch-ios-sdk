@@ -7,12 +7,8 @@
 //
 
 import UIKit
-import CoreMotion
-import CoreLocation
 import BeaconSdkFramework
-import SystemConfiguration.CaptiveNetwork
-import CoreTelephony
-import CoreBluetooth
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,10 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
    
     func application(_ application: UIApplication,
-                     performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        OpenLocate.shared.performFetchWithCompletionHandler(completionHandler)
-    }
-    
+                            performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+             
+             Intouch.shared.backgroundfetch(completionHandler: completionHandler)
+           }
+
   
    /* private func storedAuthorizationStatus() -> CLAuthorizationStatus {
         let authorizationStatusRaw = Int32(UserDefaults.standard.integer(forKey: "AuthorizationStatus"))

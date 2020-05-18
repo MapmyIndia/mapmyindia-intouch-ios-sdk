@@ -50,88 +50,24 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UNUserNotificat
          {
             self.txtTokenKey.text = trackCode
          }
-       //}*/
+     
     }
     func getCreateDeviceToken()
     {
          SVProgressHUD.show()
          let publisherkey = self.txtTokenKey.text ?? ""
          let deviceNameNew = self.deviceNameTxt.text ?? ""
-        CreateDeviceManager().IntouchCreateDevice(token: publisherkey, clientSecret: publisherkey, currentDeviceName: deviceNameNew) { (trackingCode) in
-                  print(trackingCode)
-               SVProgressHUD.dismiss()
-                          if trackingCode != ""
-                                               {
-                                                  let code = trackingCode
-                                                  DispatchQueue.main.async {
-                                                       self.txtTokenKey.text = code
-                                                       UserDefaults.standard.set(self.deviceNameTxt.text ?? "", forKey: "DeviceName") //setObject
-                                                       self.enableConfigration()
-                                                  }
-                                               
-                                                }
+        Intouch.shared.intouchInitilization(clientID: "", clientSecret: "", successResponse: { (success) in
+            print("")
+             SVProgressHUD.dismiss()
+             self.enableConfigration()
+        }) { (error) in
+            print("")
+             SVProgressHUD.dismiss()
         }
     }
     
-    
-  /*  func getCreateDeviceToken()
-    {
-          SVProgressHUD.show()
-         let publisherkey = self.txtTokenKey.text ?? ""
-        _ = CreateDeviceManager().fetchAuthToken(clientID: publisherkey, clientSecret: publisherkey) { (token) in
-                  print("%@",token)
-                  SVProgressHUD.dismiss()
-                  if token != ""
-                  {
-                     // self.CreateBeaconDevice(getToken: token)
-                  }
-              }
-    }
-    
-    func CreateBeaconDevice(getToken: String)
-    {
-        var deviceCode =  KeychainWrapper.standard.string(forKey: "deviceCode")
-        if deviceCode == nil || deviceCode == ""
-        {
-            let udid = UIDevice.current.identifierForVendor?.uuidString
-                                                            print(udid ?? "")
-            KeychainWrapper.standard.set(udid ?? "", forKey: "deviceCode")
-            deviceCode =  KeychainWrapper.standard.string(forKey: "deviceCode")
-            }
-            SVProgressHUD.show()
-        
-            let devicename1 =  UIDevice.current.name
-            let deviceModel =  UIDevice.current
-            let deviceModelNew = deviceModel.modelName
-            print(deviceModel.modelName)
-            let result = deviceModelNew.removeWhitespace()
-            print(devicename1)
-            print(result)
-            var currentVersion: String = ""
-            let infoDictionary = Bundle.main.infoDictionary
-            currentVersion = infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
-           
-            var deviceNameNew = ""
-          DispatchQueue.main.async {
-             deviceNameNew = self.deviceNameTxt.text ?? ""
-            _ =  CreateDeviceManager().createDevice(token: getToken, Url: "", deviceCode: deviceCode ?? "", deviceType: "35", deviceTypeName: devicename1, deviceName:deviceNameNew, deviceBrand: "Apple", deviceModel: result, osVersion: currentVersion, sdkVersion: "1.0", expiry: "9999") { (TrakingCode) in
-                                  
-                                    print(TrakingCode)
-                                   SVProgressHUD.dismiss()
-                                   if TrakingCode != ""
-                                    {
-                                       let code = TrakingCode
-                                       DispatchQueue.main.async {
-                                            self.txtTokenKey.text = code
-                                            UserDefaults.standard.set(self.deviceNameTxt.text ?? "", forKey: "DeviceName") //setObject
-                                            self.enableConfigration()
-                                       }
-                                    
-                                     }
-                              }
-               }
-       }*/
-
+  
     func enableConfigration()
     {
          let trackCode = UserDefaults.standard.string(forKey: "TrackCode")

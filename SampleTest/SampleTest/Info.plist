@@ -33,10 +33,6 @@
 	<string>Your location is used to personalize content.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>In order to count steps I need an access to your pedometer</string>
-	<key>ProviderId</key>
-	<string>23232424</string>
-	<key>Token</key>
-	<string>342432434</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>external-accessory</string>

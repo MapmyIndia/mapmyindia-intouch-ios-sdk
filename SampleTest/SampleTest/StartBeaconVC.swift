@@ -46,7 +46,7 @@ class StartBeaconVC: UIViewController,CLLocationManagerDelegate,UNUserNotificati
                 
        self.navigationController?.navigationBar.isHidden = true
         
-        if OpenLocate.shared.isTrackingEnabled {
+        if Intouch.shared.intouchTrackingEnabled() {
             onStartTracking()
         }
         locationManager.delegate = self
@@ -118,8 +118,7 @@ class StartBeaconVC: UIViewController,CLLocationManagerDelegate,UNUserNotificati
             
                btnTrackMode.isEnabled = true
                btnTrackMode.alpha = 1.0
-               OpenLocate.shared.stopSensors()
-               OpenLocate.shared.stopTracking()
+               Intouch.shared.stopTracking()
                onStopTracking()
      }
     
@@ -147,12 +146,9 @@ class StartBeaconVC: UIViewController,CLLocationManagerDelegate,UNUserNotificati
                         btnTrackMode.isEnabled = false
                         btnTrackMode.alpha = 0.5
                        
-                        SetConfigration().configureOpenLocate()
-                        OpenLocate.shared.startTracking()
+                        Intouch.shared.startTracking()
                         onStartTracking()
-                        OpenLocate.shared.getGyroMeterData()
-                        OpenLocate.shared.getAccelerometerData()
-                        OpenLocate.shared.getBaroMeterData()
+                     
                     timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.beaconStartTimer), userInfo: nil, repeats: true)
 
                    }
