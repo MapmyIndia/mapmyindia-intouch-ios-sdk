@@ -169,7 +169,7 @@ We put these lines for stop beacon tracking  and  sensors  like gyro, aceelerome
 Intouch.shared.stopTracking()
 option Redirect To Intouch
 ```
-Set Vehicle type and Priority configration from below code
+Set Vehicle type and Priority configration from below code.
 
 ```
  Intouch().IntouchUserGender(gender: "")
